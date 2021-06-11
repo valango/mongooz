@@ -15,14 +15,14 @@ or
 ## API
 The module exports the functions described below.
 
-### connect(service, [connectionOptions], [errorHandler]) : Promise<Connection>
+### connect(service, [connectOptions], [errorHandler]) : Promise\<Connection\>
 Creates a new mongoose connection and returns a promise to it.
 
 **_service_** `: string | {[dbName]: string, [dbURI]: string}` <br>
 A service URI to use.
 If `dbName` is not URI string, it will be appended to `dbURI`.
 
-**_connectionOptions_** `: ConnectOptions` <br>
+**_connectOptions_** `: ConnectOptions` <br>
 Type `ConnectOptions` as described in [Mongoose docs](https://mongoosejs.com/docs/api/mongoose.html#mongoose_Mongoose-createConnection).
 The defaults are: <br>
 `autoIndex: false` <br>
