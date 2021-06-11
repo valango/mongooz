@@ -15,7 +15,7 @@ or
 ## API
 The module exports the functions described below.
 
-### connect(service, [connectionOptions], [errorHandler])
+### connect(service, [connectionOptions], [errorHandler]) : Promise<Connection>
 Creates a new mongoose connection and returns a promise to it.
 
 **_service_** `: string | {[dbName]: string, [dbURI]: string}` <br>
