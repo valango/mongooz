@@ -1,0 +1,36 @@
+{
+  "name": "mongooz",
+  "version": "0.1.0",
+  "description": "Simple mongoose.",
+  "keywords": [
+    "mongoose",
+    "helpers",
+    "utility"
+  ],
+  "main": "index.js",
+  "homepage": "",
+  "repository": "git://github.com/valango/mongooz.git",
+  "author": "Villem Alango <villem.alango@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "index*",
+    "lib/*"
+  ],
+  "scripts": {
+    "clean": "rimraf *.tmp *.l* reports yarn.lock",
+    "lint": "eslint .",
+    "purge": "npm run clean && rimraf node_modules"
+  },
+  "dependencies": {
+    "lodash.foreach": "^4.5.0",
+    "mongoose": "^5.12.10"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=10.15.1"
+  },
+  "private": true
+}
