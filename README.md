@@ -55,6 +55,7 @@ The name for both the model and collection (will not be pluralized).
 ### createSchema(definition, [options]) : Schema
 Creates a schema and returns it. This wrapper function around the native Schema constructor supports
 a simplified schema definition suitable for JSON presentation:
+   * `definition.$index` optional array of objects will be applied to `schema.index()`.
    * a field `type` attribute (or whole value) can also be a string of ('boolean', 'date', 'number', 'string');
    * for a field named 'geometry', the _`createGeoSchema()`_ is applied;
    * all occurrences of `index: true` are turned into `index: {background: false}`.
