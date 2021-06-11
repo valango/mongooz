@@ -23,7 +23,7 @@ A service URI to use.
 If `dbName` is not URI string, it will be appended to `dbURI`.
 
 **_connectOptions_** `: ConnectOptions` <br>
-Type `ConnectOptions` as described in [Mongoose docs](https://mongoosejs.com/docs/api/mongoose.html#mongoose_Mongoose-createConnection).
+As described in [Mongoose docs](https://mongoosejs.com/docs/api/mongoose.html#mongoose_Mongoose-createConnection).
 The defaults are: <br>
 `autoIndex: false` <br>
 `keepAlive: true` <br>
@@ -57,7 +57,12 @@ Creates a schema and returns it. This wrapper function around the native Schema 
 a simplified schema definition suitable for JSON presentation:
    * a field `type` attribute (or whole value) can also be a string of ('boolean', 'date', 'number', 'string');
    * for a field named 'geometry', the _`createGeoSchema()`_ is applied;
-   * it turns all cases of `index: true` into `index: {background: false}`.
+   * all occurrences of `index: true` are turned into `index: {background: false}`.
+
+**_definition_** `: Object`
+
+**_options_** `: Object` <br>
+As described in [Mongoose docs](https://mongoosejs.com/docs/api/schema.html#schema_Schema).
 
 ## Links
 
