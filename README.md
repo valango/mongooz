@@ -13,7 +13,8 @@ or
 `$ npm i -S git://github.com/valango/mongooz.git`.
 
 ## API
-The module exports the functions described below.
+The module exports the mongoose [native Schema](https://mongoosejs.com/docs/api/schema.html)
+and the functions described below.
 
 ### connect(service, [connectOptions], [errorHandler]) : Promise\<Connection\>
 Creates a new mongoose connection and returns a promise to it.
