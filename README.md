@@ -37,6 +37,14 @@ The defaults are: <br>
 The `'error'` event handler. In non-production environment, it defaults
 to `console.error()`.
 
+### close(connection, [noWait]) : Promise\<true|number\>
+Closes a connection if open, waiting for all model indexes being built.
+Returns `true` on success, `connection.readyState` value otherwise.
+
+**_connection_** `: Connection`
+
+**noWait** `: boolean = false` - forces immediate closing.
+
 ### createGeoSchema(typeName) : Schema
 Creates a spatial schema of `typeName` type with '2dsphere' index.
 

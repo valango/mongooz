@@ -9,6 +9,9 @@ declare module 'mongooz' {
   // Creates a new mongoose connection and returns a promise to it.
   export function connect (service: serviceType | string, options?: Object): Promise<Connection>;
 
+  // Close the database, if connected; waits for all indexes being built.
+  export function close (db: Connection, noWait?: boolean): Promise<true | number>;
+
   // Creates a spatial schema of `typeName` type with '2dsphere' index.
   export function createGeoSchema (typeName: string): Schema;
 
