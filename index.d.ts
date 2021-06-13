@@ -10,7 +10,7 @@ declare module 'mongooz' {
   export function connect (service: serviceType | string, options?: Object): Promise<Connection>;
 
   // Close the database, if connected; waits for all indexes being built.
-  export function close (db: Connection, noWait?: boolean): Promise<true | number>;
+  export function close (db: Connection, noWait?: boolean): Promise<true>;
 
   // Creates a spatial schema of `typeName` type with '2dsphere' index.
   export function createGeoSchema (typeName: string): Schema;

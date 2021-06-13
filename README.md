@@ -39,7 +39,7 @@ to `console.error()`.
 
 ### close(connection, [noWait]) : Promise\<true|number\>
 Closes a connection if open, waiting for all model indexes being built.
-Returns `true` on success, `connection.readyState` value otherwise.
+Returns `true`.
 
 **_connection_** `: Connection`
 
