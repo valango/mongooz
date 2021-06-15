@@ -42,14 +42,6 @@ The defaults are: <br>
 The `'error'` event handler. In non-production environment, it defaults
 to `console.error()`.
 
-### close(connection, [noWait]) : Promise\<true|number\>
-Closes a connection if open, waiting for all model indexes being built.
-Returns `true`.
-
-**_connection_** `: Connection`
-
-**noWait** `: boolean = false` - forces immediate closing.
-
 ### createGeoSchema(typeName) : Schema
 Creates a spatial schema of `typeName` type with '2dsphere' index.
 
@@ -78,6 +70,13 @@ a simplified schema definition suitable for JSON presentation:
 
 **_options_** `: Object` <br>
 As described in [Mongoose docs](https://mongoosejs.com/docs/api/schema.html#schema_Schema).
+
+### syncIndexes(connection, [...model]) : Promise\<*[]>
+Waits until indexes of all or specified models are built.
+
+**_connection_** `: Connection`
+
+**model** `: Model | string` - explicitly say which models to check for.
 
 ## Links
 
