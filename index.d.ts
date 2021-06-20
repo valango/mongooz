@@ -10,6 +10,8 @@ declare module 'mongooz' {
     json (data: Object): responseType
   }
 
+  type Translator = (error: Error) => Object
+
   // Creates a new mongoose connection and returns a promise to it.
   export function connect (service: serviceType | string, options?: Object): Promise<Connection>;
 
@@ -23,8 +25,11 @@ declare module 'mongooz' {
   // a simplified schema definition suitable for JSON presentation.
   export function createSchema (definition: Object, options?: Object): Schema
 
-  // Waits for query results and sends `data` or `error` via response.json().
-  export function postJSON (query: Query<any, any>, response: responseType): void
+  // Waits for query lean() results and sends `data` or `error` via response.json().
+  export function queryJSON (query: Query<any, any>, response: responseType, translate?: Translator): void
+
+  // Waits for the promise and sends `data` or `error` via response.json().
+  export function postJSON (promise: Promise<any>, response: responseType, translate?: Translator): void
 
   // Updates a record or inserts a new one.
   export function saveOne (model: Model<any>, data: Object): Promise<Object>;

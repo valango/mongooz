@@ -71,12 +71,23 @@ a simplified schema definition suitable for JSON presentation:
 **_options_** `: Object` <br>
 As described in [Mongoose docs](https://mongoosejs.com/docs/api/schema.html#schema_Schema).
 
-### postJSON(query, response)
-Waits for query results and sends `data` or `error` via `response.json()`.
+### queryJSON(query, response, [translate])
+Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
 
 **_query_** `: Query<any,any>`
 
 **_response_** `: Object` - like one from express.js framework.
+
+**_translate_** `: function(Error):Object` - return value will go to `.json()`.
+
+### postJSON(promise, response, [translate])
+Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
+
+**_promise_** `: Promise<any>`
+
+**_response_** `: Object` - like one from express.js framework.
+
+**_translate_** `: function(Error):Object` - return value will go to `.json()`.
 
 ### saveOne(model, data) : Promise\<Object>
 Updates a record or inserts a new one.
