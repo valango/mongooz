@@ -7,7 +7,7 @@ Simple [mongoose](https://mongoosejs.com) helpers, that:
    * allow you to write more compact code.
 
 Note: this is code is used in my private projects, but I am happy to share and
-to receive any contributions and feedback. Heck, there's even no tests yet...
+to receive any contributions and feedback.
 
 ## Installation
 
