@@ -1,9 +1,13 @@
 declare module 'mongooz' {
-  import {Connection, Model, Schema} from 'mongoose';
+  import {Connection, Model, Query, Schema} from 'mongoose';
 
   interface serviceType {
     dbName: string;
     dbURI?: string;
+  }
+
+  interface responseType {
+    json (data: Object): responseType
   }
 
   // Creates a new mongoose connection and returns a promise to it.
@@ -19,9 +23,12 @@ declare module 'mongooz' {
   // a simplified schema definition suitable for JSON presentation.
   export function createSchema (definition: Object, options?: Object): Schema
 
+  // Waits for query results and sends `data` or `error` via response.json().
+  export function postJSON (query: Query<any, any>, response: responseType): void
+
   // Updates a record or inserts a new one.
-  export function saveOne (model: Model<any>, data:Object): Promise<Object>;
+  export function saveOne (model: Model<any>, data: Object): Promise<Object>;
 
   // Waits until indexes of all or specified models are built.
-  export function syncIndexes (db: Connection, ...model: Model<any>[]|string[]): Promise<any[]>;
+  export function syncIndexes (db: Connection, ...model: Model<any>[] | string[]): Promise<any[]>;
 }
