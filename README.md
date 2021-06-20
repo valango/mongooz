@@ -71,12 +71,19 @@ a simplified schema definition suitable for JSON presentation:
 **_options_** `: Object` <br>
 As described in [Mongoose docs](https://mongoosejs.com/docs/api/schema.html#schema_Schema).
 
+### saveOne(model, data) : Promise\<Object>
+Updates a record or inserts a new one.
+
+**_model_** `: Model`
+
+**_data_** `: Object` will be inspected for `_id` property.
+
 ### syncIndexes(connection, [...model]) : Promise\<*[]>
 Waits until indexes of all or specified models are built.
 
 **_connection_** `: Connection`
 
-**model** `: Model | string` - explicitly say which models to check for.
+**_model_** `: Model | string` - explicitly say which models to check for.
 
 ## Links
 

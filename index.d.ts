@@ -19,6 +19,9 @@ declare module 'mongooz' {
   // a simplified schema definition suitable for JSON presentation.
   export function createSchema (definition: Object, options?: Object): Schema
 
+  // Updates a record or inserts a new one.
+  export function saveOne (model: Model<any>, data:Object): Promise<Object>;
+
   // Waits until indexes of all or specified models are built.
   export function syncIndexes (db: Connection, ...model: Model<any>[]|string[]): Promise<any[]>;
 }

@@ -9,5 +9,6 @@ module.exports = {
   createModel: require('./lib/createModel'),
   createSchema: require('./lib/createSchema'),
   syncIndexes: require('./lib/syncIndexes'),
+  saveOne: require('./lib/saveOne'),
   Schema
 }
