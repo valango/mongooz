@@ -90,7 +90,7 @@ Waits for query `.lean()` results and sends `data` or `error` via `response.json
 **_translate_** `: function(Error):Object` - return value will go to `.json()`.
 
 ### saveOne(model, data) : Promise\<Object>
-Updates a record or inserts a new one.
+Updates a record or inserts a new one, returning the data record.
 
 **_model_** `: Model`
 
