@@ -71,6 +71,10 @@ a simplified schema definition suitable for JSON presentation:
 **_options_** `: Object` <br>
 As described in [Mongoose docs](https://mongoosejs.com/docs/api/schema.html#schema_Schema).
 
+NB: array types are supported, but only unstructured ones, e.g.:<br>
+`field: [[number]]` - ok;<br>
+`field: [{type: number}]` - will not be translated.
+
 ### queryJSON(query, response, [translate])
 Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
 

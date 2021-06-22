@@ -10,13 +10,14 @@ const unique = true
 describe('createSchema.prepare', () => {
   it('should expand', () => {
     const res = prepare({
-      a: 'number', b: String, c: { type: 'number' }, d: { type: String }
+      a: 'number', b: String, c: { type: 'number' }, d: { type: String }, e: ['number']
     })
     expect(res.definition).toEqual({
       a: { type: Number },
       b: { type: String },
       c: { type: Number },
-      d: { type: String }
+      d: { type: String },
+      e: [Number]
     })
     expect(res.indexes).toEqual([])
   })
