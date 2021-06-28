@@ -75,19 +75,35 @@ NB: array types are supported, but only unstructured ones, e.g.:<br>
 `field: [[number]]` - ok;<br>
 `field: [{type: number}]` - will not be translated.
 
-### queryJSON(query, response, [translate])
-Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
+### findBounded(model, fields, bounds, [geometryField]) : Query
+Creates a spatial intersect query.
 
-**_query_** `: Query<any,any>`
+**_model_** `: Promise<any>`
 
-**_response_** `: Object` - like one from express.js framework.
+**_fields_** `: Object` - `find()` conditions.
 
-**_translate_** `: function(Error):Object` - return value will go to `.json()`.
+**_bounds_** `: number[][]` - polygon points (a closing one will be added if not there).
+
+**_geometryField_** `: string` - return value will go to `.json()`.
+
+### getTotals(records): Object
+Sums up all numeric fields from array of data records.
+
+**_records_** `: Array<Object>`
 
 ### postJSON(promise, response, [translate])
 Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
 
 **_promise_** `: Promise<any>`
+
+**_response_** `: Object` - like one from express.js framework.
+
+**_translate_** `: function(Error):Object` - return value will go to `.json()`.
+
+### postQuery(query, response, [translate])
+Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
+
+**_query_** `: Query<any,any>`
 
 **_response_** `: Object` - like one from express.js framework.
 

@@ -8,6 +8,8 @@ exports = module.exports = {
   createGeoSchema: require('./lib/createGeoSchema'),
   createModel: require('./lib/createModel'),
   createSchema: require('./lib/createSchema'),
+  findBounded: require('./lib/findBounded'),
+  getTotals: require('./lib/getTotals'),
   syncIndexes: require('./lib/syncIndexes'),
   saveOne: require('./lib/saveOne'),
   Schema

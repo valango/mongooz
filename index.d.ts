@@ -25,11 +25,17 @@ declare module 'mongooz' {
   // a simplified schema definition suitable for JSON presentation.
   export function createSchema (definition: Object, options?: Object): Schema
 
-  // Waits for query lean() results and sends `data` or `error` via response.json().
-  export function queryJSON (query: Query<any, any>, response: responseType, translate?: Translator): void
+  // Creates a spatial intersect query.
+  export function findBounded (model: Model<any>, fields: Object, bounds: Number[][], geometryField?: String): Query<any, any>
+
+  // Sums up all numeric fields from array of data records.
+  export function getTotals (records: Object[]): Object
 
   // Waits for the promise and sends `data` or `error` via response.json().
   export function postJSON (promise: Promise<any>, response: responseType, translate?: Translator): void
+
+  // Waits for query lean() results and sends `data` or `error` via response.json().
+  export function postQuery (query: Query<any, any>, response: responseType, translate?: Translator): void
 
   // Updates a record or inserts a new one.
   export function saveOne (model: Model<any>, data: Object): Promise<Object>;
