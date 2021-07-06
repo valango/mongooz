@@ -76,7 +76,7 @@ NB: array types are supported, but only unstructured ones, e.g.:<br>
 `field: [{type: number}]` - will not be translated.
 
 ### findBounded(model, fields, bounds, [geometryField]) : Query
-Creates a spatial intersect query.
+Creates a spatial intersect query. Needs at least two coordinate pairs.
 
 **_model_** `: Promise<any>`
 

@@ -25,8 +25,8 @@ declare module 'mongooz' {
   // a simplified schema definition suitable for JSON presentation.
   export function createSchema (definition: Object, options?: Object): Schema
 
-  // Creates a spatial intersect query.
-  export function findBounded (model: Model<any>, fields: Object, bounds: Number[][], geometryField?: String): Query<any, any>
+  // Creates a spatial intersect query. Needs at least two coordinate pairs.
+  export function findBounded (model: Model<any>, fields: Object, bounds?: Number[][], geometryField?: String): Query<any, any>
 
   // Sums up all numeric fields from array of data records.
   export function getTotals (records: Object[]): Object
