@@ -91,12 +91,14 @@ Sums up all numeric fields from array of data records.
 
 **_records_** `: Array<Object>`
 
-### postJSON(promise, response, [translate])
+### postJSON(promise, response, [fieldNames], [translate])
 Waits for query `.lean()` results and sends `data` or `error` via `response.json()`.
 
 **_promise_** `: Promise<any>`
 
 **_response_** `: Object` - like one from express.js framework.
+
+**_fieldNames_** `: string | string[]` - space-delimited name(s) of fields to return (all by default).
 
 **_translate_** `: function(Error):Object` - return value will go to `.json()`.
 

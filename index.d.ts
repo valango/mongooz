@@ -32,7 +32,7 @@ declare module 'mongooz' {
   export function getTotals (records: Object[]): Object
 
   // Waits for the promise and sends `data` or `error` via response.json().
-  export function postJSON (promise: Promise<any>, response: responseType, translate?: Translator): void
+  export function postJSON (promise: Promise<any>, response: responseType, fieldNames?: string | string[], translate?: Translator): void
 
   // Waits for query lean() results and sends `data` or `error` via response.json().
   export function postQuery (query: Query<any, any>, response: responseType, translate?: Translator): void
